@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import JoblyApi from "./api";
-// import JobCardList from "./JobCardList";
+import JobCardList from "./JobCardList";
 import LoadingSpinner from "./LoadingSpinner";
 
 /** Company Detail page.
@@ -33,7 +33,7 @@ function CompanyDetail() {
         <Container>
             <h4>{company.name}</h4>
             <p>{company.description}</p>
-            {/* <JobCardList jobs={company.jobs} /> */}
+            <JobCardList jobs={company.jobs} />
         </Container>
     );
 }

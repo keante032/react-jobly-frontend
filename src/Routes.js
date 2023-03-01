@@ -2,6 +2,7 @@ import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
 import CompanyList from "./CompanyList";
 import CompanyDetail from "./CompanyDetail";
+import JobList from "./JobList";
 
 /**
  * This is rendered by App inside a BrowserRouter.
@@ -22,8 +23,7 @@ const Routes = () => {
                     <CompanyDetail />
                 </Route>
                 <Route exact path="/jobs">
-                    {/* <JobList /> */}
-                    <p>placeholder: jobs</p>
+                    <JobList />
                 </Route>
                 <Route exact path="/login">
                     {/* <LoginForm /> */}
