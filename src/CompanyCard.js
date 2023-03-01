@@ -10,6 +10,7 @@ import { LinkContainer } from "react-router-bootstrap";
  */
 
 const CompanyCard = ({ name, description, logoUrl, handle }) => {
+    if (logoUrl === null) logoUrl = '/logos/logo_blank.png';
     return (
         <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src={logoUrl} alt={name} />
