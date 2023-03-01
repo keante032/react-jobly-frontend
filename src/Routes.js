@@ -1,42 +1,43 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
+import PrivateRoute from "./PrivateRoute";
+import Homepage from "./Homepage";
 import CompanyList from "./CompanyList";
 import CompanyDetail from "./CompanyDetail";
 import JobList from "./JobList";
+import LoginForm from "./LoginForm";
+import SignupForm from "./SignupForm";
+import ProfileForm from "./ProfileForm";
 
 /**
  * This is rendered by App inside a BrowserRouter.
  * 
  */
-const Routes = () => {
+const Routes = ({ login, signup }) => {
     return (
         <div>
             <Switch>
                 <Route exact path="/">
-                    {/* <Homepage /> */}
-                    <p>placeholder: /</p>
+                    <Homepage />
                 </Route>
-                <Route exact path="/companies">
+                <PrivateRoute exact path="/companies">
                     <CompanyList />
-                </Route>
-                <Route exact path="/companies/:handle">
+                </PrivateRoute>
+                <PrivateRoute exact path="/companies/:handle">
                     <CompanyDetail />
-                </Route>
-                <Route exact path="/jobs">
+                </PrivateRoute>
+                <PrivateRoute exact path="/jobs">
                     <JobList />
-                </Route>
+                </PrivateRoute>
                 <Route exact path="/login">
-                    {/* <LoginForm /> */}
-                    <p>placeholder: login</p>
+                    <LoginForm login={login} />
                 </Route>
                 <Route exact path="/signup">
-                    {/* <SignupForm /> */}
-                    <p>placeholder: signup</p>
+                    <SignupForm signup={signup} />
                 </Route>
-                <Route path="/profile">
-                    {/* <ProfileForm /> */}
-                    <p>placeholder: profile</p>
-                </Route>
+                <PrivateRoute path="/profile">
+                    <ProfileForm />
+                </PrivateRoute>
                 <Redirect to="/" />
             </Switch>
         </div>
