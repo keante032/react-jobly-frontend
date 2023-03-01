@@ -2,8 +2,8 @@ import { Container, Spinner } from "react-bootstrap";
 
 const LoadingSpinner = () => {
     return (
-        <Container class="text-center mt-5">
-            <Spinner animation="border" style={{ height: '5rem', width: '5rem' }}>
+        <Container style={{ display: 'flex', minHeight: '100vh' }}>
+            <Spinner animation="border" style={{ height: '10rem', width: '10rem', margin: 'auto' }}>
                 <span className="visually-hidden">Loading...</span>
             </Spinner>
         </Container>
