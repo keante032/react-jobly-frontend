@@ -1,5 +1,7 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
+import CompanyList from "./CompanyList";
+import CompanyDetail from "./CompanyDetail";
 
 /**
  * This is rendered by App inside a BrowserRouter.
@@ -10,25 +12,30 @@ const Routes = () => {
         <div>
             <Switch>
                 <Route exact path="/">
-                    <p>Placeholder component for Homepage.</p>
+                    {/* <Homepage /> */}
+                    <p>placeholder: /</p>
                 </Route>
                 <Route exact path="/companies">
-                    <p>Placeholder component for Companies List.</p>
+                    <CompanyList />
                 </Route>
                 <Route exact path="/companies/:handle">
-                    <p>Placeholder component for Company Detail.</p>
+                    <CompanyDetail />
                 </Route>
                 <Route exact path="/jobs">
-                    <p>Placeholder component for Jobs List.</p>
+                    {/* <JobList /> */}
+                    <p>placeholder: jobs</p>
                 </Route>
                 <Route exact path="/login">
-                    <p>Placeholder component for Login Form.</p>
+                    {/* <LoginForm /> */}
+                    <p>placeholder: login</p>
                 </Route>
                 <Route exact path="/signup">
-                    <p>Placeholder component for Signup Form.</p>
+                    {/* <SignupForm /> */}
+                    <p>placeholder: signup</p>
                 </Route>
                 <Route path="/profile">
-                    <p>Placeholder component for Profile Detail/Form.</p>
+                    {/* <ProfileForm /> */}
+                    <p>placeholder: profile</p>
                 </Route>
                 <Redirect to="/" />
             </Switch>
